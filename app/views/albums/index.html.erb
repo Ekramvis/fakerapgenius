@@ -5,6 +5,9 @@
     <li><%= link_to album.name, album_path(album)%></li>
   <% end %>
 </ul>
-
+<br>
+  <%= link_to "Sort by Album", albums_path(album_name: true) %>
+  <%= link_to "Sort by Band", albums_path(band_name: true) %>
 <br />
+<br>
 <%= link_to "Submit a New Album", new_album_path %>

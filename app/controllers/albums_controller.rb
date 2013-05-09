@@ -1,6 +1,14 @@
 class AlbumsController < ApplicationController
   def index
     @albums = Album.all
+    sort_album = params[:album_name]
+    sort_band = params[:band_name]
+
+    if sort_album
+      @albums.sort_by! { |album| album.name }
+    elsif sort_band
+      @albums.sort_by! { |album| album.band.name }
+    end
   end
 
   def new
