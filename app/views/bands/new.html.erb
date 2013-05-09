@@ -1,6 +1,12 @@
 <h1>Create a Band</h1>
 
 <%= form_for(@band) do |f| %>
+
+  <ul>
+    <% @band.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br />

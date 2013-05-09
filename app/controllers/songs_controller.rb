@@ -1,9 +1,4 @@
 class SongsController < ApplicationController
-
-  def index
-    @songs = Song.all
-  end
-
   def new
     @song = Song.new
   end
@@ -13,7 +8,7 @@ class SongsController < ApplicationController
 
     if @song.save
       flash.notice = "Song saved"
-      redirect_to songs_path
+      redirect_to new_track_url
     else
       render :new
     end
@@ -22,5 +17,4 @@ class SongsController < ApplicationController
   def show
     @song = Song.find(params[:id])
   end
-
 end

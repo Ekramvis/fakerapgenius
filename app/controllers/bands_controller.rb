@@ -12,7 +12,7 @@ class BandsController < ApplicationController
 
     if @band.save
       flash.notice = "Band saved"
-      redirect_to bands_path
+      redirect_to bands_url
     else
       render :new
     end

@@ -12,9 +12,14 @@ class TracksController < ApplicationController
 
     if @track.save
       flash.notice = "Track saved"
-      redirect_to tracks_path
+      redirect_to album_url(@track.album)
     else
       render :new
     end
   end
+
+  def index
+    @tracks = Track.all
+  end
+
 end

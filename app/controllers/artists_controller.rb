@@ -13,7 +13,7 @@ class ArtistsController < ApplicationController
 
     if @artist.save
       flash.notice = "Artist saved"
-      redirect_to artists_path
+      redirect_to artists_url
     else
       render :new
     end

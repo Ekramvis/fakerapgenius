@@ -20,7 +20,7 @@ class AlbumsController < ApplicationController
 
     if @album.save
       flash.notice = "Album saved"
-      redirect_to albums_path
+      redirect_to albums_url
     else
       render :new
     end

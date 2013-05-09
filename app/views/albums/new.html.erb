@@ -1,6 +1,11 @@
 <h1>Create an Album</h1>
 
 <%= form_for(@album) do |f| %>
+  <ul>
+    <% @album.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
   <%= f.label :name, "Album name: " %>
   <%= f.text_field :name %>
   <br />

@@ -1,6 +1,11 @@
 <h1>Create a Track</h1>
 
 <%= form_for(@track) do |f| %>
+  <ul>
+    <% @track.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
   <%= f.label :song_id, "Song name: " %>
   <%= f.collection_select :song_id, Song.all, :id, :name%>
   <br />
@@ -15,3 +20,12 @@
   <br />
   <%= f.submit "Create Track"%>
 <% end %>
+
+<h3>Add a new song</h3>
+
+<form action="/songs" method="post">
+  <label for="song_title">Song title</label>
+  <input type="text" name="song[name]" id="song_title">
+  <br>
+  <input type="submit" value="Add Song">
+</form>
