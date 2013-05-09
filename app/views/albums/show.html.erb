@@ -1,7 +1,18 @@
 <h1><%= @album.name %></h1>
 
+<div>
 <ul>
   <li>Band: <%= @album.band.name %></li>
   <li>Album Type: <%= @album.live ? "Live" : "Studio" %></li>
 </ul>
-
+</div>
+<div>
+  <strong>Tracks</strong>
+  <ul>
+    <% @album.tracks.each do |track| %>
+      <li>
+        <%= link_to track.song.name, track_path(track)%>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,3 +1,10 @@
 <h1><%= @band.name %></h1>
 
-<p>Still more to come</p>
+<strong>Albums</strong>
+<ul>
+<% @band.albums.each do |album| %>
+  <li>
+    <%= link_to album.name, album_path(album) %>
+  </li>
+<% end %>
+</ul>

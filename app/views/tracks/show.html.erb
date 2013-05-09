@@ -7,4 +7,7 @@
   <li>
     Album: <%= link_to @track.album.name, album_path(@track.album) %>
   </li>
+  <li>
+    Lyrics: <%= @track.lyrics %>
+  </li>
 </ul>

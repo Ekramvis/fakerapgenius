@@ -1,0 +1,9 @@
+<h1><%= @song.name %></h1>
+
+<ul>
+  <% @song.tracks.each do |track| %>
+  <li>
+    <%= track.band.name + ", " + track.album.name + " "%> (<%= track.album.live ? "Live" : "Studio"%>)
+  </li>
+  <% end %>
+</ul>
