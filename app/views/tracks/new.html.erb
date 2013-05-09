@@ -1,0 +1,17 @@
+<h1>Create a Track</h1>
+
+<%= form_for(@track) do |f| %>
+  <%= f.label :album_id, "Album name: " %>
+  <%= f.collection_select :album_id, Album.all, :id, :name%>
+  <br />
+  <%= f.label :album_id, "Album name: " %>
+  <%= f.collection_select :album_id, Album.all, :id, :name%>
+  <br />
+  <%= f.label :lyrics, "Lyrics"%>
+  <%= f.text_area :lyrics%>
+  <br>
+  <%= f.label :bonus, "Track type: " %>
+  <%= f.select :bonus, [["Bonus",true],["Regular",false]]%>
+  <br />
+  <%= f.submit "Create Track"%>
+<% end %>

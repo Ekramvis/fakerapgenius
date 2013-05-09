@@ -1,0 +1,10 @@
+<h1><%= @track.song.name %></h1>
+
+<ul>
+  <li>
+    Band: <%= link_to @track.band.name, band_path(@track.band) %>
+  </li>
+  <li>
+    Album: <%= link_to @track.album.name, album_path(@track.album) %>
+  </li>
+</ul>
