@@ -21,4 +21,10 @@ class BandsController < ApplicationController
   def show
     @band = Band.find(params[:id])
   end
+
+  def search
+    target = params[:query]
+    target = "%" + "#{target}" + "%"
+    @bands = Band.where("name LIKE ?", target)
+  end
 end
