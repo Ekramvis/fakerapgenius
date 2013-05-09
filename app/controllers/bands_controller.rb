@@ -11,6 +11,7 @@ class BandsController < ApplicationController
     @band = Band.new(params[:band])
 
     if @band.save
+      flash.notice = "Band saved"
       redirect_to bands_path
     else
       render :new

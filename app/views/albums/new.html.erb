@@ -1,0 +1,14 @@
+<h1>Create an Album</h1>
+
+<%= form_for(@album) do |f| %>
+  <%= f.label :name, "Album name: " %>
+  <%= f.text_field :name %>
+  <br />
+  <%= f.label :band_id, "Band name: " %>
+  <%= f.collection_select :band_id, Band.all, :id, :name%>
+  <br />
+  <%= f.label :live, "Album type: " %>
+  <%= f.select :live, [["Live",true],["Studio",false]]%>
+  <br />
+  <%= f.submit "Create Album"%>
+<% end %>
