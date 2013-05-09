@@ -4,4 +4,5 @@ Musicgenius::Application.routes.draw do
   resources :albums
   resources :songs
   resources :tracks
+  resources :artists
 end

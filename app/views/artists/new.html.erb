@@ -1,0 +1,24 @@
+<h1>Add an Artist</h1>
+
+
+<%= form_for(@artist) do |f| %>
+  <%= f.label :name, "Artist: " %>
+  <%= f.text_field :name %>
+
+  <% Band.all.each do |band| %>
+    <label>
+      <%= band.name%>
+      <%=
+      check_box_tag(
+        "artist[band_ids][]",
+        band.id,
+        @artist.bands.include?(band)
+      )
+      %>
+    </label>
+  <% end %>
+
+  <%= hidden_field_tag "artist[band_ids][]" %>
+  <br>
+  <%= f.submit "Submit Artist"%>
+<% end %>
